@@ -1,0 +1,6 @@
+{
+  "name": "Tränarobservationer Fotboll",
+  "description": "En enkel mobilanpassad app för att registrera, röststyra och sortera observationer under fotbollsträningar.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

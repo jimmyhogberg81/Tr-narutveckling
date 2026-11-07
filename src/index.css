@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Overwrite default-colors inside theme to perfectly match SEF NextGen Colors */
+  --color-orange-500: #E94B4F; /* PMS 2348 C (Bright Coral) */
+  --color-orange-600: #D33D41;
+  --color-orange-400: #9ED6E6; /* PMS 304 C (Soft Light Blue) */
+  --color-orange-300: #B4E1EE;
+  
+  --color-amber-500: #FFD600; /* SEF Bright Yellow */
+  --color-amber-600: #E6C000;
+  
+  --color-emerald-500: #9ED6E6; /* Soft Light Blue */
+  --color-emerald-600: #88C8D9;
+  
+  --color-slate-800: #2a3c66;
+}
+
+body {
+  background-color: #0E204D !important; /* PMS 2768 C Background */
+  color: #f4f4f5;
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+}
+
+button, input, textarea, select, option, span, p, div, label, h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
+
+button {
+  color: #ffffff !important;
+}
+
+/* Custom glow animations centered around the SEF Coral Accent color (#E94B4F) */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(233, 75, 79, 0.4), 0 0 20px rgba(233, 75, 79, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(233, 75, 79, 0.8), 0 0 45px rgba(233, 75, 79, 0.4);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 1.8s infinite;
+}
+
+/* ---------------------------------------------------------
+   Surgical overrides for arbitrary color classes in App.tsx
+   to inject the SEF NextGen Premium Palette seamlessly
+   --------------------------------------------------------- */
+
+/* Main page background */
+.bg-\[\#090b11\] {
+  background-color: #0E204D !important; /* PMS 2768 C */
+}
+
+/* Header, footer and navigation panels */
+.bg-\[\#0c0f17\]\/90 {
+  background-color: rgba(14, 32, 77, 0.95) !important;
+}
+.bg-\[\#0c0f17\] {
+  background-color: #0E204D !important;
+}
+
+/* Major visual cards & layouts mapped to PMS 33 G 54 B 105 (#203668) */
+.bg-\[\#0e121c\],
+.bg-\[\#0f1320\],
+.bg-\[\#0e121d\],
+.from-\[\#111624\] {
+  background-color: #203668 !important;
+}
+
+/* Seamless support for gradient card containers */
+.from-\[\#111624\] {
+  --tw-gradient-from: #203668 !important;
+  --tw-gradient-to: #0E204D !important;
+  background-image: linear-gradient(to bottom, var(--tw-gradient-from), var(--tw-gradient-to)) !important;
+}
+.to-\[\#0c0f18\] {
+  --tw-gradient-to: #0E204D !important;
+}
+
+/* Subtle inner panels, dropzones, and background tables */
+.bg-\[\#0b0e16\]\/50,
+.bg-\[\#141a29\]\/60,
+.bg-\[\#111624\]\/60,
+.bg-\[\#151a2d\]\/30 {
+  background-color: rgba(12, 24, 51, 0.5) !important;
+}
+
+/* Nested lists, inputs, selection states & form elements */
+.bg-\[\#0b0e16\],
+.bg-\[\#0c101c\],
+.bg-\[\#101422\]\/40,
+.bg-\[\#141a29\],
+.bg-\[\#151a29\],
+.bg-\[\#111522\],
+.bg-\[\#101422\],
+.bg-\[\#121824\],
+.bg-\[\#101726\],
+.bg-\[\#0e1220\],
+.bg-\[\#151a2d\] {
+  background-color: #15264b !important; /* Beautiful secondary dark-navy */
+}
+
+/* Button & element hover styles */
+.hover\:bg-\[\#1a2135\]:hover,
+.hover\:bg-\[\#192135\]:hover,
+.hover\:bg-\[\#1a2138\]:hover {
+  background-color: #233a72 !important;
+}
+
+/* Precise borders mapped beautifully to a tailored SEF brand layout */
+.border-\[\#252a36\],
+.border-\[\#1d2334\],
+.border-\[\#22293b\],
+.border-\[\#222a3d\],
+.border-\[\#20273b\],
+.border-\[\#252f47\],
+.border-\[\#293551\],
+.border-\[\#202737\],
+.border-\[\#242e47\],
+.border-\[\#20283c\],
+.border-\[\#1e2536\],
+.border-\[\#232938\],
+.border-\[\#232d47\],
+.border-\[\#1b212f\] {
+  border-color: #2e4370 !important; /* Custom branded blue border */
+}
+
+/* Override custom active scoring colors to use PMS Coral Red (#E94B4F) */
+.bg-\[\#ff7a30\] {
+  background-color: #E94B4F !important;
+}
+.hover\:bg-\[\#e06626\]:hover {
+  background-color: #d33d41 !important;
+}
+.border-\[\#ff7a30\], .border-orange-500 {
+  border-color: #E94B4F !important;
+}
+.border-\[\#ff7a30\]\/30 {
+  border-color: rgba(233, 75, 79, 0.3) !important;
+}
+.text-\[\#ff7a30\] {
+  color: #E94B4F !important;
+}
+
+/* Focus and active highlight states */
+.focus\:border-orange-500:focus {
+  border-color: #E94B4F !important;
+}
+
+/* Elegant brand text gradients */
+.from-orange-500 {
+  --tw-gradient-from: #E94B4F !important;
+}
+.via-amber-500 {
+  --tw-gradient-via: #FFD600 !important;
+}
+.to-orange-400 {
+  --tw-gradient-to: #9ED6E6 !important;
+}
